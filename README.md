@@ -1,33 +1,38 @@
-# Dawood's Game Garden
+# My 2nd Website
 
-A small website for browser experiments and my collection of Python games.
+My website frontend and Python projects, organised into separate folders.
 
-## What's inside
+## Project structure
 
-- `index.html` — the website and its browser-based experiments.
-- Python projects — desktop games and small tools from my Python collection.
+```text
+frontend/   Website files (HTML, CSS, JavaScript and assets)
+backend/    Reserved for future server-side code
+games/      Python games and small tools
+README.md   Project overview and setup notes
+COPYRIGHT.md
+.gitignore
+```
 
-## Open the website locally
+## Run the website
 
-1. Download or clone this repository.
-2. Open `index.html` in a modern web browser.
+Open `frontend/index.html` in a modern browser. The built-in browser experiments run in the browser without a server.
 
-The experiments inside the HTML file run in the browser. The Python programs are separate desktop applications and may require Python plus extra libraries such as Pygame or CustomTkinter, depending on the program.
+## Run a Python game
 
-## Run a Python project
-
-Install Python 3, then open a terminal in this folder and run the relevant script, for example:
+Install Python 3, then open a terminal in the `games/` folder. For example:
 
 ```bash
 python snake.py
 ```
 
-If a game reports a missing module, install the dependency required by that specific project. Some projects may also rely on local assets or system features.
+Some games may need extra packages (such as Pygame) or other dependencies. Install the requirements for the individual game if Python reports a missing module.
 
-## Repository
+## Backend
 
-Original Python game collection: [Simple-Python-Games](https://github.com/dawoodriy-hub/Simple-Python-Games)
+The `backend/` folder is a placeholder for future server-side features. The current website does not require a backend to run its browser experiments.
 
-## License and reuse
+## Related repository
 
-See [COPYRIGHT.md](COPYRIGHT.md) for the project's copyright and reuse notice. No open-source licence is granted unless a separate licence file says otherwise.
+The original Python collection is in [Simple-Python-Games](https://github.com/dawoodriy-hub/Simple-Python-Games).
+
+See [COPYRIGHT.md](COPYRIGHT.md) for the copyright and reuse notice.
