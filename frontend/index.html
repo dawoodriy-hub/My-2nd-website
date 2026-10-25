@@ -28,7 +28,7 @@ body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;let
 .hero-orbit{position:absolute;width:230px;height:230px;border:1px solid #39734c32;border-radius:50%;transform:rotate(-24deg) scaleY(.62)}
 .hero-orbit:after{content:"";position:absolute;top:18px;right:30px;width:12px;height:12px;border-radius:50%;background:#e8a45c;box-shadow:0 0 0 6px #e8a45c24}
 .hero-orbit.second{width:290px;height:290px;transform:rotate(34deg) scaleY(.58);border-color:#39734c20}
-.hero-planet{position:relative;display:grid;place-items:center;width:158px;height:158px;border:8px solid #ffffffa8;border-radius:48% 52% 58% 42%;background:linear-gradient(145deg,#9ec692,#4f8b5d);box-shadow:0 20px 45px #315d3b36;color:#fff;font-size:70px;transform:rotate(-9deg);animation:planet-float 5s ease-in-out infinite}
+.hero-planet{position:relative;display:grid;place-items:center;width:158px;height:158px;border:8px solid #ffffffa8;border-radius:48% 52% 58% 42%;background:linear-gradient(145deg,#9ec692,#4f8b5d);box-shadow:0 20px 45px #24352422;color:#fff;font-size:70px;transform:rotate(-9deg);animation:planet-float 5s ease-in-out infinite}
 .hero-sticker{position:absolute;z-index:1;border:1px solid #dbe5d8;border-radius:13px;background:#fff;padding:9px 12px;box-shadow:0 8px 20px #293b2910;color:#4c5e4d;font-size:11px;font-weight:750;letter-spacing:.03em}
 .hero-sticker.top{top:18px;right:2px}.hero-sticker.bottom{bottom:18px;left:4px}
 @keyframes planet-float{0%,100%{transform:translateY(0) rotate(-9deg)}50%{transform:translateY(-9px) rotate(-4deg)}}
@@ -51,6 +51,46 @@ body[data-theme="dark"] .hero-link,body[data-theme="dark"] .hero-sticker{border-
 @media(max-width:800px){.hero{grid-template-columns:1fr minmax(210px,.65fr);gap:10px;padding:42px 34px;min-height:350px}.hero h1{font-size:clamp(42px,7vw,62px)}.hero-art{min-height:220px}.hero-planet{width:130px;height:130px;font-size:58px}.hero-orbit.second{width:240px;height:240px}}
 @media(max-width:620px){.wrap{padding:14px 16px 48px}.top{align-items:center}.tools{gap:6px}.theme,.pill{padding:7px 9px;font-size:12px}.hero{grid-template-columns:1fr;gap:0;margin-top:18px;padding:34px 25px 18px;border-radius:24px}.hero h1{font-size:clamp(44px,12vw,64px)}.hero .intro-copy{font-size:15px}.hero-art{min-height:195px;margin-top:2px}.hero-planet{width:112px;height:112px;font-size:48px}.hero-orbit{width:180px;height:180px}.hero-orbit.second{width:225px;height:225px}.hero-sticker.top{top:6px;right:8%}.hero-sticker.bottom{bottom:6px;left:8%}.sectiontitle{align-items:start;flex-direction:column;gap:3px;margin-top:34px}.bar{align-items:stretch}.filters{gap:6px}.filter{padding:7px 10px;font-size:12px}.search{min-width:100%}.grid{grid-template-columns:1fr;gap:13px}.art{height:140px}.cardbody{padding:16px}.card p{min-height:0;margin-bottom:12px}.python-note{font-size:13px}.footer{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.hero-planet{animation:none}.hero-link,.hero-play,.card,.art .shape,.open,.pill,.theme,.filter{transition:none}}
+.cardfoot{flex-wrap:wrap}
+.python-actions{display:flex;gap:6px;align-items:center}
+.python-actions .open{padding:7px 9px;font-size:11px;white-space:nowrap;text-decoration:none}
+.python-actions .play-python{background:var(--accent);color:#fff}
+.browser-demo{padding:16px}
+.browser-demo .demo-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.browser-demo .demo-score{font-size:14px;font-weight:750;color:var(--accent)}
+.browser-demo .demo-help{color:var(--muted);font-size:13px}
+.browser-demo canvas{display:block;width:100%;height:auto;border-radius:14px;background:#16251d;touch-action:none}
+.browser-demo .demo-controls{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}
+.browser-demo .demo-grid{display:grid;gap:8px}
+.browser-demo .demo-button{border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);padding:10px 14px;font:inherit;font-weight:700;cursor:pointer}
+.browser-demo .demo-button:hover,.browser-demo .demo-button.selected{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.browser-demo .demo-button:disabled{cursor:not-allowed;opacity:.5}
+.browser-demo .demo-status{min-height:24px;margin:10px 0 0;text-align:center;font-weight:700}
+.browser-demo .ttt-grid{grid-template-columns:repeat(3,minmax(62px,100px));justify-content:center}
+.browser-demo .ttt-grid button{height:86px;font-size:36px}
+.browser-demo .chess-grid{grid-template-columns:repeat(8,minmax(30px,54px));justify-content:center;gap:0}
+.browser-demo .chess-grid button{aspect-ratio:1;padding:0;border:0;border-radius:0;font-size:clamp(20px,5vw,34px)}
+.browser-demo .chess-grid button.light{background:#eeeed2;color:#20221f}
+.browser-demo .chess-grid button.dark{background:#769656;color:#20221f}
+.browser-demo .chess-grid button.selected{box-shadow:inset 0 0 0 4px #f7f769}
+.browser-demo .chess-grid button.white-piece{color:#fff;text-shadow:1px 1px #20221f,-1px -1px #20221f,1px -1px #20221f,-1px 1px #20221f}
+.browser-demo .chess-grid button.black-piece{color:#20221f}
+.browser-demo .hangman-letters{display:flex;justify-content:center;gap:5px;flex-wrap:wrap}
+.browser-demo .hangman-letters button{min-width:34px;padding:7px 8px}
+.browser-demo .mole-grid{grid-template-columns:repeat(3, minmax(72px,100px));justify-content:center}
+.browser-demo .mole-grid button{height:76px;font-size:34px;background:#e8f1e5}
+.browser-demo .mole-grid button.mole{background:#f4dfbc;transform:scale(1.04)}
+.browser-demo .calc-display{width:min(100%,360px);margin:0 auto 12px;padding:15px;border-radius:14px;background:#202321;color:#fff;text-align:right;font-size:32px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.browser-demo .calc-grid{width:min(100%,360px);grid-template-columns:repeat(4,1fr);margin:auto}
+.browser-demo .calc-grid button{min-height:54px}
+.browser-demo .tool-display{font-size:clamp(34px,8vw,64px);font-variant-numeric:tabular-nums;text-align:center;padding:28px 8px}
+.browser-demo input,.browser-demo select{max-width:100%;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);padding:10px 12px;font:inherit}
+.browser-demo .quiz-options{display:grid;gap:8px;max-width:520px;margin:14px auto}
+.browser-demo .quiz-options button{text-align:left}
+.browser-demo .game-word{font-size:clamp(26px,6vw,44px);letter-spacing:.18em;text-align:center;margin:22px 0}
+.browser-demo .move-result{font-size:48px;text-align:center;padding:12px}
+.python-note .note-small{display:block;margin-top:10px;font-size:12px}
+@media(max-width:520px){.python-actions{width:100%}.python-actions .open{flex:1;text-align:center}.browser-demo{padding:10px}.browser-demo .chess-grid{grid-template-columns:repeat(8,minmax(26px,1fr))}}
 </style>
 </head>
 <body>
@@ -83,17 +123,21 @@ body[data-theme="dark"] .hero-link,body[data-theme="dark"] .hero-sticker{border-
 <article class="card" data-kind="python" data-title="Quiz Game"><div class="art" style="background:#dfeaf7"><div class="shape">❓</div></div><div class="cardbody"><h2>Quiz Game</h2><p>Challenge yourself with your Python quiz project.</p><div class="cardfoot"><span class="tag">Python</span><a class="open" href="https://github.com/dawoodriy-hub/My-2nd-website/blob/main/games/quiz_game.py" target="_blank" rel="noreferrer">View code ↗</a></div></div></article>
 <article class="card" data-kind="python" data-title="Rock Paper Scissors"><div class="art" style="background:#f3e5d8"><div class="shape">✊</div></div><div class="cardbody"><h2>Rock Paper Scissors</h2><p>Play the classic choice game against the computer.</p><div class="cardfoot"><span class="tag">Python</span><a class="open" href="https://github.com/dawoodriy-hub/My-2nd-website/blob/main/games/rock_paper_scissor_game.py" target="_blank" rel="noreferrer">View code ↗</a></div></div></article></div>
 <div class="empty-state" id="emptyState" role="status" aria-live="polite" aria-hidden="true"><strong>No games found</strong><span>Try another search or choose a different filter.</span></div>
-<div class="sectiontitle"><h2>Your Python shelf</h2><small>More projects in the repository</small></div><div class="python-note">This hub brings your Python projects together, but Python desktop games do not run directly inside a normal web page. Open the source on GitHub to download and run them with Python (and Pygame where required). <a href="https://github.com/dawoodriy-hub/My-2nd-website" target="_blank" rel="noreferrer">Browse all Python games ↗</a><br><br>Also in the repo: Calculator, Time Tool, Dice Game, Hangman, Money Currency, Quiz Game, Rock Paper Scissors and more.</div>
+<div class="sectiontitle"><h2>Your Python shelf</h2><small>More projects in the repository</small></div><div class="python-note">Try a browser-friendly edition or open the original Python source. The browser versions are made to play instantly; the code links are still there if you want to see how the projects work. <a href="https://github.com/dawoodriy-hub/My-2nd-website" target="_blank" rel="noreferrer">Browse all Python games ↗</a><span class="note-small">Currency demo uses approximate sample rates and is for fun, not financial decisions.</span></div>
 <footer class="footer"><span>Made for curiosity by Dawood ✳</span><span>Tip: press <span class="kbd">Esc</span> to close a game · no account needed</span></footer>
 </div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalSub"><div class="panel"><div class="panelhead"><div><h2 id="modalTitle">Experiment</h2><p class="sub" id="modalSub">Have a play.</p></div><button class="close" id="close" aria-label="Close experiment">✕</button></div><div id="game"></div></div></div>
+<script src="./games.js"></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
 const themeSelect=$('#theme');function applyTheme(value){document.body.dataset.theme=value==='green'?'':value}try{const savedTheme=localStorage.getItem('game-garden-theme');if(savedTheme&&Array.from(themeSelect.options).some(option=>option.value===savedTheme))themeSelect.value=savedTheme}catch{}applyTheme(themeSelect.value);themeSelect.addEventListener('change',e=>{applyTheme(e.target.value);try{localStorage.setItem('game-garden-theme',e.target.value)}catch{}});
 let activeCleanup=null,previousFocus=null;
+const pythonGameTitles={'space-shooter':'Space Shooter','snake':'Snake','pong':'Pong','flappy-bird':'Flappy Bird','whack-a-mole':'Whack-a-Mole','chess':'Chess','tic-tac-toe':'Tic-tac-toe','calculator':'Calculator','time-tool':'Time Tool','dice-game':'Dice Game','hangman':'Hangman','money-currency':'Money Currency','number-guessing-game':'Number Guessing Game','quiz-game':'Quiz Game','rock-paper-scissors':'Rock Paper Scissors'};
+const pythonGameIds={'Space Shooter':'space-shooter','Snake':'snake','Pong':'pong','Flappy Bird':'flappy-bird','Whack a Mole':'whack-a-mole','Chess':'chess','Tic Tac Toe':'tic-tac-toe','Calculator':'calculator','Time Tool':'time-tool','Dice Game':'dice-game','Hangman':'hangman','Money Currency':'money-currency','Number Guessing Game':'number-guessing-game','Quiz Game':'quiz-game','Rock Paper Scissors':'rock-paper-scissors'};
+$$('.card[data-kind="python"]').forEach(card=>{const id=pythonGameIds[card.dataset.title],link=card.querySelector('a.open');if(!id||!link)throw new Error('A Python shelf item is missing its browser game or source link.');const actions=document.createElement('div');actions.className='python-actions';const play=document.createElement('button');play.className='open play-python';play.type='button';play.dataset.open='python-'+id;play.textContent='Play here →';actions.append(play,link);card.querySelector('.cardfoot').append(actions)});
 function openGame(id){if(activeCleanup){activeCleanup();activeCleanup=null}const modal=$('#modal'),game=$('#game');game.innerHTML='';previousFocus=document.activeElement;modal.classList.add('show');$('#close').focus();const defs={
-particles:['Particle Garden','Move your pointer over the canvas. The dots are curious.'],art:['Infinite Art Machine','Draw, change the colour, then save your image.'],physics:['Bouncy Physics','Tap the playground to drop a ball.'],reaction:['Reaction Time Test','Five rounds. Do not click until the panel turns green.'],guess:['Number Guess','A secret number from 1 to 100.'],coin:['Coin Flip Lab','Flip a coin and keep track of your results.']};$('#modalTitle').textContent=defs[id][0];$('#modalSub').textContent=defs[id][1];
-if(id==='particles')setupParticles(game);if(id==='art')setupArt(game);if(id==='physics')setupPhysics(game);if(id==='reaction')setupReaction(game);if(id==='guess')setupGuess(game);if(id==='coin')setupCoin(game);
+particles:['Particle Garden','Move your pointer over the canvas. The dots are curious.'],art:['Infinite Art Machine','Draw, change the colour, then save your image.'],physics:['Bouncy Physics','Tap the playground to drop a ball.'],reaction:['Reaction Time Test','Five rounds. Do not click until the panel turns green.'],guess:['Number Guess','A secret number from 1 to 100.'],coin:['Coin Flip Lab','Flip a coin and keep track of your results.']};const pythonId=id.startsWith('python-')?id.slice(7):null;const title=pythonId?pythonGameTitles[pythonId]:null;if(pythonId&&!title)throw new Error('Unknown browser game: '+pythonId);const definition=defs[id];$('#modalTitle').textContent=pythonId?title:definition[0];$('#modalSub').textContent=pythonId?'Browser edition · a quick way to play this project without installing Python.':definition[1];
+if(id==='particles')setupParticles(game);if(id==='art')setupArt(game);if(id==='physics')setupPhysics(game);if(id==='reaction')setupReaction(game);if(id==='guess')setupGuess(game);if(id==='coin')setupCoin(game);if(pythonId)activeCleanup=window.setupPythonGame(pythonId,game);
 }
 $$('[data-open]').forEach(b=>b.addEventListener('click',()=>openGame(b.dataset.open)));function closeModal(){if(activeCleanup){activeCleanup();activeCleanup=null}$('#modal').classList.remove('show');$('#game').innerHTML='';if(previousFocus&&typeof previousFocus.focus==='function')previousFocus.focus();previousFocus=null}$('#close').addEventListener('click',closeModal);$('#modal').addEventListener('click',e=>{if(e.target===$('#modal'))closeModal()});document.addEventListener('keydown',e=>{const dialog=$('#modal');if(!dialog.classList.contains('show'))return;if(e.key==='Escape'){closeModal();return}if(e.key==='Tab'){const focusable=[...dialog.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')];if(!focusable.length)return;const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&(document.activeElement===first||!dialog.contains(document.activeElement))){e.preventDefault();last.focus()}else if(!e.shiftKey&&(document.activeElement===last||!dialog.contains(document.activeElement))){e.preventDefault();first.focus()}}});
 $$('.filter').forEach(btn=>btn.addEventListener('click',()=>{$$('.filter').forEach(b=>{const active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});filterCards()}));$('#search').addEventListener('input',filterCards);function filterCards(){const f=$('.filter.active').dataset.filter,q=$('#search').value.trim().toLowerCase();let visible=0;$$('.card').forEach(c=>{const matches=(f==='all'||c.dataset.kind===f)&&c.textContent.toLowerCase().includes(q);c.style.display=matches?'':'none';if(matches)visible++});const empty=$('#emptyState');empty.classList.toggle('show',visible===0);empty.setAttribute('aria-hidden',String(visible!==0))}
